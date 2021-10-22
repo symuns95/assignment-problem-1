@@ -1,0 +1,14 @@
+.section-profile-lists {
+  padding: 3rem 0;
+}
+.container-profile-lists hr {
+  border-bottom: 1px solid rgb(27, 27, 27);
+  margin: 0.5rem 0;
+}
+
+.container-profile-lists .header-profile-lists {
+  justify-content: space-between;
+}
+.header-profile-lists {
+  margin: 0.5rem 0;
+}
