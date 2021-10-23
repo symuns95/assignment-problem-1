@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useGlobalContext } from "../../utils/ContextProvider";
 import AdminLists from "../AdminLists/AdminLists";
-import UserLists from "../EmployeeLists/EmployeeLists";
+import EmployeeLists from "../EmployeeLists/EmployeeLists";
 import "./tabsComponent.css";
 const adminUsers = "https://60f2479f6d44f300177885e6.mockapi.io/users?&user_type=admin&page=1&limit=5";
 const employeeUsers = "https://60f2479f6d44f300177885e6.mockapi.io/users?&user_type=employee&page=1&limit=5";
@@ -30,7 +30,7 @@ const TabComponent = () => {
           </button>
         </div>
         <AdminLists index={index} value={1} />
-        <UserLists index={index} value={0} />
+        <EmployeeLists index={index} value={0} />
       </div>
     </>
   );

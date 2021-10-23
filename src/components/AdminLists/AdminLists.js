@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React from "react";
 import ProfileInfo from "../ProfileInfo/ProfileInfo";
 import { useGlobalContext } from "../../utils/ContextProvider";
 const AdminLists = ({ index, value }) => {

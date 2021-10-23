@@ -1,9 +1,7 @@
-import React, { useContext, useEffect, useState, useRef } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Context from "./store";
 import axios from "axios";
-const allUsers = "https://60f2479f6d44f300177885e6.mockapi.io/users?&page=1&limit=5";
-/// find multiple keymatch
-// const urlall = "https://60f2479f6d44f300177885e6.mockapi.io/users?user_type=employee&district=dhaka&division=dhaka&page=1&limit=2";
+const allUsers = "https://60f2479f6d44f300177885e6.mockapi.io/users";
 
 const ContextProvider = ({ children }) => {
   // main
@@ -22,7 +20,14 @@ const ContextProvider = ({ children }) => {
       .get(url)
       .then((res) => {
         if (res) {
-          setData(res.data);
+          // setData(res.data);
+          const newData = res.data.map((item) => {
+            if (item.division.match(/dhaka/) && item.district.match(/dhaka/)) {
+              return { ...item, status: "true" };
+            }
+            return { ...item, status: "false" };
+          });
+          setData(newData);
         } else {
           setData([]);
         }

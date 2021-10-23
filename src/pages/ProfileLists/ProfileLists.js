@@ -1,6 +1,5 @@
-import React, { useContext } from "react";
+import React from "react";
 import TabsComponent from "../../components/TabComponents/tabsComponent";
-import { FaPlus } from "react-icons/fa";
 import "./profileLists.css";
 import Modal from "../../components/addUserModal/Modal";
 import Heading from "../../components/heading/heading";

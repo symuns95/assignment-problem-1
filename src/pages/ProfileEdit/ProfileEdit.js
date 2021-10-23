@@ -10,8 +10,6 @@ const ProfileEdit = () => {
   const { fistName, setFistName, lastName, setLastName, division, setDivision, district, setDistrict, fetchData } = useGlobalContext();
   const { id } = useParams();
 
-  // const findItem = data.find((item) => item.id === id);
-
   // get all state of bd
   const stateOFBd = State.getStatesOfCountry("BD");
   // seperate district and division
@@ -107,8 +105,8 @@ const ProfileEdit = () => {
               <Link to={`/profileview/${id}`} className="btn-profile-edit btn-cancle">
                 Cancle
               </Link>
-              <button onClick={handleSave} className="btn-profile-edit btn-save">
-                <span>Save</span>
+              <button type="submit" onClick={handleSave} className="btn-profile-edit btn-save">
+                Save
               </button>
             </div>
           </form>

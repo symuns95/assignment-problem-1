@@ -5,7 +5,7 @@ import { useEffect } from "react/cjs/react.development";
 import "./ProfileInfo.css";
 // "https://60f2479f6d44f300177885e6.mockapi.io/users?user_type=employee&district=dhaka&division=dhaka&page=1&limit=2"
 const UserInfo = (props) => {
-  const { bg, heading, first_name, last_name, user_type, division, district, id, selectDivision, setSelectDistict, setSelectDivision, selectDistict } = props;
+  const { bg, heading, first_name, last_name, status, division, district, id, selectDivision, setSelectDistict, setSelectDivision, selectDistict } = props;
 
   const districtUrl = "https://bdapis.herokuapp.com/api/v1.1/division";
   const divisionsUrl = "https://bdapis.herokuapp.com/api/v1.1/divisions";
@@ -35,6 +35,7 @@ const UserInfo = (props) => {
     });
   }, [selectDivision]);
   const newDistrictData = [{ district: "", empty: "Select your District", value: "" }, ...districtData];
+  console.log(status);
 
   return (
     <>
@@ -97,7 +98,7 @@ const UserInfo = (props) => {
               <div className="division">{division}</div>
             </div>
             <div className="user-info-col">
-              <div className="status text-center">{user_type}</div>
+              <div className="status text-center">{status}</div>
             </div>
             <div className="user-info-col">
               <Link className="btn-user-info text-center" to={`/profileview/${id + ""}`}>

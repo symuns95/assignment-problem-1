@@ -1,10 +1,12 @@
-import React, { useContext } from "react";
-import Context from "../../utils/store";
+import React from "react";
 import { FaTimes } from "react-icons/fa";
 import "./modal.css";
-import AddUserForm from "../addUserForm/addUserForm";
+// import AddUserForm from "../addUserForm/addUserForm";
+import AddUserForm from "../formAddUser/FormAddUser";
+import { useGlobalContext } from "../../utils/ContextProvider";
 const Modal = () => {
-  const { isShowModal, hideModal } = useContext(Context);
+  const { isShowModal, hideModal } = useGlobalContext();
+
   return (
     <>
       <div onClick={hideModal} className={` ${isShowModal ? "active-modal-bg modal-bg" : "modal-bg"}  `} />
